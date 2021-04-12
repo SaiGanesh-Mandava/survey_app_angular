@@ -14,7 +14,7 @@ export class ReadSurveyComponent implements OnInit {
   tokens: String[] = null;
 
 
-  url = "http://localhost:8083/api/getstudent/";
+  url = "http://localhost:8080/api/getstudent/";
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

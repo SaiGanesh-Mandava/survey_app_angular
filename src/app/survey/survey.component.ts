@@ -12,7 +12,7 @@ export class SurveyComponent implements OnInit {
   record:any = {}
   likemost:any = {}
   // url = "http://localhost:8080/ApiTesting1/rest/api/putRecord"
-  url = "http://localhost:8083/api/addstudent"
+  url = "http://localhost:8080/api/addstudent"
   
   constructor(private http: HttpClient, private router: Router) {
   }
