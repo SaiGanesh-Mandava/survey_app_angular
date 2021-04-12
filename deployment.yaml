@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swe645-deploy
+  labels:
+    app: swe645-app
+    test: test
+#   annotations:
+#     fluxcd.io/tag.example-app: semver:~1.0
+#     fluxcd.io/automated: 'true'
+spec:
+  selector:
+    matchLabels:
+      app: swe645-app
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: swe645-app
+    spec:
+      containers:
+      - name: swe645-app
+        image: ganeshmandava1247889/survey_app:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 4200
+        # livenessProbe:
+        #   httpGet:
+        #     path: /status
+        #     port: 5000
+        #   initialDelaySeconds: 3
+        #   periodSeconds: 3
+#         resources:
+#           requests:
+#             memory: "64Mi"
+#             cpu: "50m"
+#           limits:
+#             memory: "256Mi"
+#             cpu: "500m"
