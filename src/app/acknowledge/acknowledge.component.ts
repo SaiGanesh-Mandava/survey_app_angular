@@ -27,7 +27,7 @@ export class AcknowledgeComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.http.get<any>("http://a0f930571896f4bcb8386b48984a7e49-1513026135.us-east-1.elb.amazonaws.com/api/students").subscribe(data => {
+    this.http.get<any>("http://a26d74647a44647afa5eacca55c1d9cc-280642794.us-east-1.elb.amazonaws.com/api/students").subscribe(data => {
     //console.log("data from api is:",data);
     this.list = data;
     })

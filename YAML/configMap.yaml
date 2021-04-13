@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: swe645-config
+  name: ag-config
 data:
   config.json: |
     {
