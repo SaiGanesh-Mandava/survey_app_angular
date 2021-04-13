@@ -19,7 +19,7 @@ jobs:
            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - name: docker login
         run: |
-           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+           cat ~/my_password.txt | docker login --username foo --password-stdin
       # Runs a single command using the runners shell
       - name: docker build
         run: |
