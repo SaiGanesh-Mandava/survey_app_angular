@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: ag-app
-        image: ganeshmandava1247889/survey_app:latest
+        image: ganeshmandava1247889/survey_extra_credit:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
