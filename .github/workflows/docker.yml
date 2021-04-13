@@ -17,6 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        env:
+           DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
+           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      - name: docker login
+        run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       # Runs a single command using the runners shell
       - name: docker build
         run: |
