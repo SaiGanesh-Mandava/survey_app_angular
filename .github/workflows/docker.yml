@@ -7,13 +7,10 @@ on:
   push:
     branches: [ main ]
 
- 
-  workflow_dispatch:
-
-
 jobs:
  
   build:
+    
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,7 +19,7 @@ jobs:
            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - name: docker login
         run: |
-           echo $DOCKER_USERNAME
+           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       # Runs a single command using the runners shell
       - name: docker build
         run: |
